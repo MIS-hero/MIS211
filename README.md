@@ -13,7 +13,8 @@ The program is organized into four functions:
 | `introduction()` | Displays a welcome message and explains the program |
 | `get_input()` | Gets and validates the mode, value, and activity type |
 | `processing()` | Calculates distance, steps, time, and calories |
-| `display_output()` | Displays either per-activity results or the final summary |
+| `display_activity()` | Displays per-activity results|
+| `display_summary()` | Displays the final summary |
 
 ---
 
