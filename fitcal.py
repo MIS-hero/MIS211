@@ -1,6 +1,6 @@
 """
 Fitcal - Steps and Time Estimator (Daily Planner)
--------------------------------------------------
+
 Fitcal estimates the steps, time, and calories burned for a Walking,
 Jogging, or Running session. For each activity the user picks a mode:
   1) Distance mode - enter a distance in km.
@@ -10,9 +10,6 @@ The user can add as many activities as they like. When they finish,
 Fitcal displays a daily summary of the totals for all activities.
 """
 
-# ---------------------------------------------------------------------------
-# Welcome message
-# ---------------------------------------------------------------------------
 def introduction():
     print("=" * 52)
     print("  Welcome to Fitcal - Steps and Time Estimator")
@@ -64,11 +61,8 @@ def get_input():
     return activity_choice, mode_choice, target_value
 
 def processing(activity_choice, mode_choice, target_value):
-    # ---------------------------------------------------------------------------
-    # Named constants: step length (meters), speed (km/h), calories burned
-    # per kilometer. Typical planning estimates for an average adult at a
-    # moderate pace (see Sheet 2 for the reference ranges).
-    # ---------------------------------------------------------------------------
+    # Step length (m), speed (km/h), and calories/km per activity.
+    # Typical planning estimates for an average adult at a moderate pace.
     WALKING_STEP_LENGTH_METERS = 0.75   # avg. adult step length (~0.7-0.8 m)
     WALKING_SPEED_KMH = 5               # moderate/brisk walking pace (~4-6 km/h)
     WALKING_CALORIES_PER_KM = 50        # avg. adult, brisk pace (~30-60 kcal/km)
@@ -132,9 +126,7 @@ def display_activity(activity_count, activity_name, mode_name, distance_km, step
 
 
 def display_summary(activity_count, total_distance_km, total_steps, total_time_minutes, total_calories):
-    # ---------------------------------------------------------------------------
     # Daily summary (displayed once, after the loop ends)
-    # ---------------------------------------------------------------------------
     print("=" * 40)
     print("            Daily Summary")
     print("=" * 40)
@@ -147,19 +139,14 @@ def display_summary(activity_count, total_distance_km, total_steps, total_time_m
 
 
 def main():
-    # ---------------------------------------------------------------------------
-    # Accumulators for the daily summary (start at 0 before the loop)
-    # ---------------------------------------------------------------------------
+    # Accumulators for the daily summary, start at 0 before the loop
     total_distance_km = 0.0
     total_steps = 0.0
     total_time_minutes = 0.0
     total_calories = 0.0
     activity_count = 0  # counts how many activities have been added
     introduction()
-    # ---------------------------------------------------------------------------
-    # Main loop: repeats once for each activity the user adds.
-    # add_another starts as "1" so the loop runs at least once.
-    # ---------------------------------------------------------------------------
+    # Loop runs once per activity added, starts as "1" to run at least once
     add_another = "1"
     while add_another == "1":
         activity_choice, mode_choice, target_value = get_input()
