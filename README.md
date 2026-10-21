@@ -72,7 +72,7 @@ Thank you for using Fitcal! Have a great workout.
 **Input values:**
 - Mode: `2` (Calories)
 - Calories: `300`
-- Activity: `2` (Jogging)
+- Activity: `3` (ٍRunning)
 - Add another: `2` (No)
 
 **Terminal output:**

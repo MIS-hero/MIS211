@@ -151,7 +151,7 @@ def main():
     while add_another == "1":
         activity_choice, mode_choice, target_value = get_input()
         activity_name, mode_name, distance_km, steps, time_minutes, calories_burned = processing(activity_choice, mode_choice, target_value)
-        display_activity(activity_count, activity_name, mode_name, distance_km, steps, time_minutes, calories_burned)
+        activity_count = display_activity(activity_count, activity_name, mode_name, distance_km, steps, time_minutes, calories_burned)
         # Step 7: Add this activity's results to the daily running totals.
         # Steps are whole counts, so the rounded value is added - this way the
         # total always equals the sum of the step counts shown for each activity.
