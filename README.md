@@ -118,6 +118,8 @@ Thank you for using Fitcal! Have a great workout.
 
 ### Test 3 — Boundary value (lowest / highest accepted)
 
+### Upper limit distance mode 
+
 **Input values:**
 - Mode: `1` (Distance)
 - Distance: `100` (highest accepted)
@@ -160,7 +162,142 @@ Total Calories Burned: 9,000 kcal
 
 Thank you for using Fitcal! Have a great workout.
 ```
+---
+### Lower limit distance mode 
 
+**Input values:**
+- Mode: `1` (Distance)
+- Distance: `1` (lowest accepted)
+- Activity: `3` (Running)
+- Add another: `2` (No)
+
+**Terminal output:**
+
+```
+====================================================
+  Welcome to Fitcal - Steps and Time Estimator
+====================================================
+Fitcal estimates how many steps you'll take, how long it will
+take, and how many calories you'll burn for a Walk, Jog, or Run.
+Add as many activities as you like, and Fitcal will show your
+daily totals at the end.
+
+Choose mode - 1) Distance  2) Calories: 1
+Enter distance in km: 1
+Choose activity - 1) Walking  2) Jogging  3) Running: 3
+Activity 1
+
+--- Activity 1: Running Estimator ---
+Mode: Distance
+Distance: 1.00 km
+Estimated Steps: 833 steps
+Estimated Time: 5.0 minutes
+Estimated Calories Burned: 90 kcal
+
+Add another activity? 1) Yes  2) No: 2
+
+========================================
+            Daily Summary
+========================================
+Activities Planned: 1
+Total Distance: 1.00 km
+Total Steps: 833 steps
+Total Time: 5.0 minutes
+Total Calories Burned: 90 kcal
+
+Thank you for using Fitcal! Have a great workout.
+```
+---
+### Upper limit calories mode 
+
+**Input values:**
+- Mode: `2` (Calories)
+- Calories: `5000` (highest accepted)
+- Activity: `3` (Running)
+- Add another: `2` (No)
+
+**Terminal output:**
+
+```
+====================================================
+  Welcome to Fitcal - Steps and Time Estimator
+====================================================
+Fitcal estimates how many steps you'll take, how long it will
+take, and how many calories you'll burn for a Walk, Jog, or Run.
+Add as many activities as you like, and Fitcal will show your
+daily totals at the end.
+
+Choose mode - 1) Distance  2) Calories: 2
+Enter target calories to burn: 5000
+Choose activity - 1) Walking  2) Jogging  3) Running: 3
+Activity 1
+
+--- Activity 1: Running Estimator ---
+Mode: Calories
+Distance: 55.56 km
+Estimated Steps: 46,296 steps
+Estimated Time: 277.8 minutes
+Estimated Calories Burned: 5,000 kcal
+
+Add another activity? 1) Yes  2) No: 2
+
+========================================
+            Daily Summary
+========================================
+Activities Planned: 1
+Total Distance: 55.56 km
+Total Steps: 46,296 steps
+Total Time: 277.8 minutes
+Total Calories Burned: 5,000 kcal
+
+Thank you for using Fitcal! Have a great workout.
+
+```
+---
+### Lower limit calories mode 
+
+**Input values:**
+- Mode: `2` (Calories)
+- Calories: `1` (Lowest accepted)
+- Activity: `3` (Running)
+- Add another: `2` (No)
+
+**Terminal output:**
+
+```
+====================================================
+  Welcome to Fitcal - Steps and Time Estimator
+====================================================
+Fitcal estimates how many steps you'll take, how long it will
+take, and how many calories you'll burn for a Walk, Jog, or Run.
+Add as many activities as you like, and Fitcal will show your
+daily totals at the end.
+
+Choose mode - 1) Distance  2) Calories: 2
+Enter target calories to burn: 1
+Choose activity - 1) Walking  2) Jogging  3) Running: 3
+Activity 1
+
+--- Activity 1: Running Estimator ---
+Mode: Calories
+Distance: 0.01 km
+Estimated Steps: 9 steps
+Estimated Time: 0.1 minutes
+Estimated Calories Burned: 1 kcal
+
+Add another activity? 1) Yes  2) No: 2
+
+========================================
+            Daily Summary
+========================================
+Activities Planned: 1
+Total Distance: 0.01 km
+Total Steps: 9 steps
+Total Time: 0.1 minutes
+Total Calories Burned: 1 kcal
+
+Thank you for using Fitcal! Have a great workout.
+```
 ---
 
 ### Test 4 — Invalid input: re-entry requested
@@ -213,7 +350,6 @@ Total Calories Burned: 3,500 kcal
 
 Thank you for using Fitcal! Have a great workout.
 ```
-
 ---
 
 ### Test 5 — Loop repeats more than once
