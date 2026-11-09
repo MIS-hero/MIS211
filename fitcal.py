@@ -15,6 +15,8 @@ ACTIVITIES = {
     "Running": {"step_length": 1.2, "speed": 12.0, "calories_per_km": 90.0},
 }
 
+HEADER_IMAGE_URL = "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Frj7M7jRFEIPeml0ZXiizcrW14xZiY.png"
+
 DESCRIPTION = (
     "Fitcal estimates how many steps you'll take, how long it will take, "
         "and how many calories you'll burn for a Walk, Jog, or Run. Add as many "
@@ -184,6 +186,7 @@ def render_plan_form() -> None:
 def main() -> None:
     st.set_page_config(page_title="Fitcal - Steps and Time Estimator", page_icon="🏃", layout="centered")
     initialize_state()
+    st.image(HEADER_IMAGE_URL, caption="Taking control of your movement goals", use_container_width=True)
     st.title("Fitcal - Steps and Time Estimator")
     st.write(DESCRIPTION)
     st.info("Note: calories, time, steps, and pace are estimates, not precise measurements.")
