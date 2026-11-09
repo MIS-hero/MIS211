@@ -9,6 +9,7 @@ import streamlit as st
 MAX_DISTANCE_KM = 100.0
 MAX_CALORIES = 5000.0
 
+# ACTIVITIES stores the step length, speed, and calories per kilometer for each activity.
 ACTIVITIES = {
     "Walking": {"step_length": 0.75, "speed": 5.0, "calories_per_km": 50.0},
     "Jogging": {"step_length": 1.0, "speed": 8.0, "calories_per_km": 70.0},
@@ -35,6 +36,7 @@ def format_time(total_minutes: int) -> str:
     return f"{hours} {hour_label} {minutes} minutes"
 
 
+# calculate_activity() calculates distance, steps, time, and calories for one activity.
 def calculate_activity(mode: str, value: float, activity_name: str) -> dict[str, Any]:
     """Calculate one activity using the flowchart formulas."""
     activity = ACTIVITIES[activity_name]
@@ -132,6 +134,7 @@ def render_daily_summary() -> None:
         ("Time", format_time(total_minutes)),
         ("Calories", f"{total_calories:,} kcal"),
     ]
+    # This for loop displays each total as a separate metric.
     for column, (label, value) in zip(columns, metrics):
         column.metric(label, value)
     details = st.columns(4)
@@ -166,6 +169,7 @@ def render_plan_form() -> None:
     if mode not in {"Distance", "Calories"}:
         st.error("Please choose a calculation mode: Distance or Calories.")
         return
+    # This if statement checks whether the entered distance is within the valid range (0 < distance <= 100).
     if mode == "Distance" and (not math.isfinite(value) or value <= 0 or value > MAX_DISTANCE_KM):
         st.error("Distance must be more than 0 and at most 100 km. Please try again.")
         return
